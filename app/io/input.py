@@ -29,7 +29,7 @@ def read_from_file_native(file_path):
             content = file.read()
         return content
     except FileNotFoundError:
-        return "File not found"
+        raise FileNotFoundError("File not found")
 
 
 def read_from_file_with_pandas(file_path):
@@ -49,4 +49,4 @@ def read_from_file_with_pandas(file_path):
         data = pd.read_csv(file_path)  # assuming the file is a CSV, adjust accordingly
         return data
     except FileNotFoundError:
-        return "File not found"
+        raise FileNotFoundError("File not found")
